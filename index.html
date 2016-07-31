@@ -98,7 +98,6 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-
             overflow:hidden;
         }
 
@@ -141,6 +140,18 @@
             background-color:rgba(0,0,0,0.5);
         }
 
+        #refresh svg
+        {
+            width: 1em;
+            height: 1em;
+            font-family: Hack, "Courier New", Courier, monospace;
+            font-size:2em;
+            margin-left:9.5em;
+            margin-top:-3.75em;
+            position:absolute;
+            display: inline-block;
+        }
+
         footer {
             position: absolute;
             bottom: 0;
@@ -158,24 +169,52 @@
             text-decoration: underline;
         }
 
+        @media screen and (max-width: 700px)
+        {
+            main
+            {
+                text-align:center;
+            }
+
+            input
+            {
+                font-size: 1.0em;
+            }
+
+            #refresh svg
+            {
+                text-align:left;
+                width: 0.5em;
+                height: 0.5em;
+                margin-left:-0.25em;
+                margin-top:-1.875em;
+            }
+
+            footer
+            {
+                font-size: 0.7em;
+            }
+        }
     </style>
 </head>
 <body>
     <main>
         <article>
-            <input id="pwd1" title="pwd1" value="" readonly><input id="pwd2" title="pwd2" value="" readonly><br>
-            <input id="pwd3" title="pwd3" value="" readonly><input id="pwd4" title="pwd4" value="" readonly>
+            <input id="pwd1" title="" value="" readonly><input id="pwd2" title="" value="" readonly><br>
+            <input id="pwd3" title="" value="" readonly><input id="pwd4" title="" value="" readonly><br>
+            <!--https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/svg/refresh.svg -->
+            <a href="javascript:location.reload();" id="refresh"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1639 1056q0 5-1 7-64 268-268 434.5t-478 166.5q-146 0-282.5-55t-243.5-157l-129 129q-19 19-45 19t-45-19-19-45v-448q0-26 19-45t45-19h448q26 0 45 19t19 45-19 45l-137 137q71 66 161 102t187 36q134 0 250-65t186-179q11-17 53-117 8-23 30-23h192q13 0 22.5 9.5t9.5 22.5zm25-800v448q0 26-19 45t-45 19h-448q-26 0-45-19t-19-45 19-45l138-138q-148-137-349-137-134 0-250 65t-186 179q-11 17-53 117-8 23-30 23h-199q-13 0-22.5-9.5t-9.5-22.5v-7q65-268 270-434.5t480-166.5q146 0 284 55.5t245 156.5l130-129q19-19 45-19t45 19 19 45z" fill="#fff"/></svg></a>
             <script>
                 function generatePassword() {
                     var length = 10,
                             charsetNice = "abcdefghkmnopqrstuvwxyzABCDEFGHKLMNPQRSTUVWXYZ23456789",
                             charset = charsetNice+"+-._",
                             retVal = "";
-                    retVal += charsetNice.charAt(Math.floor(Math.random() * n));
+                    retVal += charsetNice.charAt(Math.floor(Math.random() * charsetNice.length));
                     for (var i = 0, n = charset.length; i < length; ++i) {
                         retVal += charset.charAt(Math.floor(Math.random() * n));
                     }
-                    retVal += charsetNice.charAt(Math.floor(Math.random() * n));
+                    retVal += charsetNice.charAt(Math.floor(Math.random() * charsetNice.length));
                     return retVal;
                 }
                 document.getElementById("pwd1").value = generatePassword();
