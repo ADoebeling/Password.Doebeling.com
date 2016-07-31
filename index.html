@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>PWD! The word's best password generator</title>
-    <meta name="description" content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
+    <meta name="description"
+          content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
     <meta name="author" content="Andreas Doebeling">
     <meta property="og:title" content="PWD! The world's best password generator">
-    <meta property="og:description" content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
+    <meta property="og:description"
+          content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
     <meta property="fb:app_id" content="286418498391310">
     <meta property="og:url" content="http://password.doebeling.de">
     <meta property="og:image" content="http://password.doebeling.de/img/ogimage.jpg">
@@ -23,11 +25,10 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -55,24 +56,30 @@
             border: 0;
             vertical-align: baseline;
         }
+
         /* HTML5 display-role reset for older browsers */
         article, aside, details, figcaption, figure,
         footer, header, menu, nav, section {
             display: block;
         }
+
         body {
             line-height: 1;
         }
+
         ol, ul {
             list-style: none;
         }
+
         blockquote, q {
             quotes: none;
         }
+
         blockquote:before, blockquote:after,
         q:before, q:after {
             content: none;
         }
+
         table {
             border-collapse: collapse;
             border-spacing: 0;
@@ -88,207 +95,212 @@
             font-style: normal
         }
 
-        html, body
-        {
-            margin:0;
-            padding:0;
-            height:100%;
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             /* https://pixabay.com/en/seven-sisters-reefs-ocean-england-1462388/ */
             background: #5C7FA9 url(img/background.jpg) no-repeat fixed center center;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            overflow:hidden;
+            overflow: hidden;
         }
 
-        main
-        {
-            position:relative;
-            margin:0 auto;
-            width:100%;
-            height:auto;
-            min-height:100%;
-            text-align:left;
+        main {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            text-align: left;
         }
 
-        article
-        {
-            padding:1em;
+        article {
+            padding: 1em;
         }
 
-        input
-        {
-            width:8em;
+        input {
+            width: 8em;
             font-family: Hack, "Courier New", Courier, monospace;
-            padding:1em;
+            padding: 1em;
+            margin: 0.5em;
             font-size: 2em;
             font-weight: bold;
             text-align: center;
             color: white;
             border: none;
-            outline:none;
+            outline: none;
             background: none;
+            border-radius: .5em .5em .5em .5em;
         }
 
-        input:hover
-        {
-            background-color:rgba(0,0,0,0.2);
+        input:hover {
+            background-color: rgba(0, 0, 0, 0.2);
         }
 
-        input:focus
-        {
-            background-color:rgba(0,0,0,0.5);
+        input:focus {
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        #refresh svg
-        {
+        #refresh svg {
             width: 1em;
             height: 1em;
+            padding: .5em;
             font-family: Hack, "Courier New", Courier, monospace;
-            font-size:2em;
-            margin-left:9.5em;
-            margin-top:-3.75em;
-            position:absolute;
+            font-size: 2em;
+            margin-left: 10em;
+            margin-top: -5.25em;
+            border-radius:100%;
+            position: absolute;
             display: inline-block;
+        }
+
+        #refresh svg:hover
+        {
+            background-color: rgba(0, 0, 0, 0.2);
         }
 
         footer {
             position: absolute;
             bottom: 0;
             right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius:0.5em 0 0 0;
-            color:white;
-            font-family: Hack, "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-            padding:1em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 0.5em 0 0 0;
+            color: white;
+            font-family: Myriad, Verdana, Arial, Helvetica, sans-serif;
+            padding: 1em;
         }
 
-        footer:hover h1
-        {
-            font-size: 1.2em;
+        footer h1 {
+            font-size: 1em;
+            font-weight: normal;
         }
 
-        footer a, footer a:active, footer a:visited
-         {
-             color:white;
-             text-decoration: none;
-            padding:0.3em;
-            border-radius:0.3em;
-            width:30em;
+        footer:hover h1 {
+            font-size: 1.5em;
+            padding-bottom: .2em;
+            border-bottom: 2px solid white;
+        }
+
+        footer a, footer a:active, footer a:visited {
+            color: white;
+            text-decoration: none;
+            padding: 0.3em;
+            border-radius: 0.3em;
             display: inline-block;
-         }
-
-        footer a:hover
-        {
-            color:black;
-            background:white;
         }
 
-        footer h1
-        {
-            font-size:1em;
-            font-weight:normal;
+        footer a:hover {
+            color: black;
+            background: white;
         }
 
-
-
-        footer:hover > #credits
-        {
+        footer:hover > #credits {
             display: inline-block;
 
         }
 
-        #credits
-        {
+        #credits {
             display: none;
-            padding-top:1em;
+            padding-top: 1em;
         }
 
-        #credits li
-        {
+        #credits li {
             list-style: disc;
             margin-left: 2em;
-            padding-bottom:0.5em;
+            padding-bottom: 0.5em;
         }
 
-        @media screen and (max-width: 700px)
-        {
-            main
-            {
-                text-align:center;
+        @media screen and (max-width: 800px) {
+            main {
+                text-align: center;
             }
 
             input
             {
-                font-size: 1.0em;
+                padding:.2em;
             }
 
-            #refresh svg
+            #pwd2, #pwd3, #pwd4
             {
-                text-align:left;
-                width: 0.5em;
-                height: 0.5em;
-                margin-left:-0.25em;
-                margin-top:-1.875em;
+                display:none;
             }
 
-            footer
-            {
+            #refresh svg {
+                position: relative;
+                width: 1em;
+                height: 1em;
+                padding:0;
+                margin-left:0;
+                margin-top:-1em;
+            }
+
+            footer {
                 font-size: 0.7em;
+                width:85%;
+            }
+
+            footer:hover {
+                padding-bottom:4em;
             }
         }
     </style>
 </head>
 <body>
-    <main>
-        <article>
-            <input id="pwd1" title="" value="" readonly><input id="pwd2" title="" value="" readonly><br>
-            <input id="pwd3" title="" value="" readonly><input id="pwd4" title="" value="" readonly><br>
-            <!--https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/svg/refresh.svg -->
-            <a href="javascript:location.reload();" id="refresh"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1639 1056q0 5-1 7-64 268-268 434.5t-478 166.5q-146 0-282.5-55t-243.5-157l-129 129q-19 19-45 19t-45-19-19-45v-448q0-26 19-45t45-19h448q26 0 45 19t19 45-19 45l-137 137q71 66 161 102t187 36q134 0 250-65t186-179q11-17 53-117 8-23 30-23h192q13 0 22.5 9.5t9.5 22.5zm25-800v448q0 26-19 45t-45 19h-448q-26 0-45-19t-19-45 19-45l138-138q-148-137-349-137-134 0-250 65t-186 179q-11 17-53 117-8 23-30 23h-199q-13 0-22.5-9.5t-9.5-22.5v-7q65-268 270-434.5t480-166.5q146 0 284 55.5t245 156.5l130-129q19-19 45-19t45 19 19 45z" fill="#fff"/></svg></a>
-            <script>
-                function generatePassword() {
-                    var length = 10,
-                            charsetNice = "abcdefghkmnopqrstuvwxyzABCDEFGHKLMNPQRSTUVWXYZ23456789",
-                            charset = charsetNice+"+-._",
-                            retVal = "";
-                    retVal += charsetNice.charAt(Math.floor(Math.random() * charsetNice.length));
-                    for (var i = 0, n = charset.length; i < length; ++i) {
-                        retVal += charset.charAt(Math.floor(Math.random() * n));
-                    }
-                    retVal += charsetNice.charAt(Math.floor(Math.random() * charsetNice.length));
-                    return retVal;
+<main>
+    <article>
+        <input id="pwd1" title="" value="" readonly><input id="pwd2" title="" value="" readonly><br>
+        <input id="pwd3" title="" value="" readonly><input id="pwd4" title="" value="" readonly><br>
+        <!--https://github.com/encharm/Font-Awesome-SVG-PNG/blob/master/white/svg/refresh.svg -->
+        <a href="javascript:location.reload();" id="refresh">
+            <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1639 1056q0 5-1 7-64 268-268 434.5t-478 166.5q-146 0-282.5-55t-243.5-157l-129 129q-19 19-45 19t-45-19-19-45v-448q0-26 19-45t45-19h448q26 0 45 19t19 45-19 45l-137 137q71 66 161 102t187 36q134 0 250-65t186-179q11-17 53-117 8-23 30-23h192q13 0 22.5 9.5t9.5 22.5zm25-800v448q0 26-19 45t-45 19h-448q-26 0-45-19t-19-45 19-45l138-138q-148-137-349-137-134 0-250 65t-186 179q-11 17-53 117-8 23-30 23h-199q-13 0-22.5-9.5t-9.5-22.5v-7q65-268 270-434.5t480-166.5q146 0 284 55.5t245 156.5l130-129q19-19 45-19t45 19 19 45z"
+                      fill="#fff"></path>
+            </svg>
+        </a>
+        <script>
+            function generatePassword() {
+                var length = 10,
+                        charsetNice = "abcdefghkmnopqrstuvwxyzABCDEFGHKLMNPQRSTUVWXYZ23456789",
+                        charset = charsetNice + "+-._",
+                        retVal = "";
+                retVal += charsetNice.charAt(Math.floor(Math.random() * charsetNice.length));
+                for (var i = 0, n = charset.length; i < length; ++i) {
+                    retVal += charset.charAt(Math.floor(Math.random() * n));
                 }
-                document.getElementById("pwd1").value = generatePassword();
-                document.getElementById("pwd2").value = generatePassword();
-                document.getElementById("pwd3").value = generatePassword();
-                document.getElementById("pwd4").value = generatePassword();
-            </script>
-        </article>
-    </main>
-    <footer>
-        <h1>Just the world's best password generator. Trust me.</h1>
-        <div id="credits">
-            <ul>
-                <li><a href="//www.doebeling.me" target="_blank">Development by Andreas Döbeling</a></li>
-                <li><a href="//www.doebeling.de" target="_blank">Copyright by DÖBELING Web&IT</a></li>
-                <li><a href="//pixabay.com/en/jurassic-coast-england-dorset-1406284/" target="_blank">Photo by Roman "diego_torres" G.</a>
-                </li>
-                <li><a href="//github.com/chrissimpkins/Hack" target="_blank">Font "Hack" by Chris Simpkins</a></li>
-                <li><a href="https://github.com/ADoebeling/password" target="_blank">Hosted on github</a></li>
-
-                <li><a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fpassword.doebeling.de%2F"
-                       target="_blank">Valid HTML5</a></li>
-                <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=password.doebeling.de&profile=css3&usermedium=all&warning=1&vextwarning="
-                        target="_blank">Valid CSS3</a></li>
-
-
-                <li><a href="https://developers.google.com/speed/pagespeed/insights/?url=password.doebeling.de"
-                        target="_blank">Optimized for  Google PageSpeed Insight</a>
-                <li><a href="https://gtmetrix.com/reports/password.doebeling.de/z6XDELhX" target="_blank">Performance scoring by GTmetrix</a></li>
-            </ul>
-        </div>
-    </footer>
+                retVal += charsetNice.charAt(Math.floor(Math.random() * charsetNice.length));
+                return retVal;
+            }
+            document.getElementById("pwd1").value = generatePassword();
+            document.getElementById("pwd2").value = generatePassword();
+            document.getElementById("pwd3").value = generatePassword();
+            document.getElementById("pwd4").value = generatePassword();
+        </script>
+    </article>
+</main>
+<footer>
+    <h1>Just the world's best password generator. Trust me.</h1>
+    <div id="credits">
+        <ul>
+            <li><a href="//www.doebeling.me" target="_blank">Development by Andreas Döbeling</a></li>
+            <li><a href="//www.doebeling.de" target="_blank">Copyright by DÖBELING Web&IT (2016)</a></li>
+            <li><a href="//pixabay.com/en/jurassic-coast-england-dorset-1406284/" target="_blank">Photo by Roman
+                "diego_torres" G. / pixabay.com</a></li>
+            <li><a href="//github.com/chrissimpkins/Hack" target="_blank">Font "Hack" by Chris Simpkins / github.com</a></li>
+            <li><a href="http://fontawesome.io/icon/refresh/" target="_blank">Icon "Refresh" by Dave Gandy / FontAwesome.io</a></li>
+            <li><a href="https://github.com/ADoebeling/password" target="_blank">Hosted on github</a></li>
+            <li><a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=http%3A%2F%2Fpassword.doebeling.de%2F"
+                   target="_blank">Valid HTML5</a></li>
+            <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=password.doebeling.de&profile=css3&usermedium=all&warning=1&vextwarning="
+                   target="_blank">Valid CSS3</a></li>
+            <li><a href="https://developers.google.com/speed/pagespeed/insights/?url=password.doebeling.de"
+                   target="_blank">Optimized for Google PageSpeed Insight</a>
+            <li><a href="https://gtmetrix.com/reports/password.doebeling.de/z6XDELhX" target="_blank">Performance
+                scoring by GTmetrix</a></li>
+        </ul>
+    </div>
+</footer>
 </body>
 </html>
