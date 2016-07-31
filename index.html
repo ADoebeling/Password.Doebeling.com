@@ -10,8 +10,8 @@
     <meta property="og:description"
           content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
     <meta property="fb:app_id" content="286418498391310">
-    <meta property="og:url" content="http://password.doebeling.de">
-    <meta property="og:image" content="http://password.doebeling.de/img/ogimage.jpg">
+    <meta property="og:url" content="http://password.doebeling.com">
+    <meta property="og:image" content="http://password.doebeling.com/img/ogimage.jpg">
     <meta property="og:image:width" content="1600">
     <meta property="og:image:height" content="837">
     <meta property="og:image:height" content="837">
@@ -32,6 +32,10 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script>
+        if (window.location.protocol != "https:")
+            window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    </script>
     <style>
         /* http://meyerweb.com/eric/tools/css/reset/
            v2.0 | 20110126
