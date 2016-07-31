@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de" manifest="manifest.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>PWD! The word's best password generator</title>
+    <meta name="description" content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
+    <meta name="author" content="Andreas Doebeling">
+    <meta property="og:title" content="PWD! The word's best password generator">
+    <meta property="og:description" content="Little JS based site that displays 4 human readable passwords without IiLl10Oo on a nice backgroud image.">
+    <meta property="fb:app_id" content="286418498391310">
+    <meta property="og:url" content="https://adoebeling.github.io/password/">
+    <meta property="og:image" content="https://adoebeling.github.io/password/img/ogimage.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="837">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/
+           v2.0 | 20110126
+           License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        /**************************************************************************************************************/
+
+        @font-face {
+            font-family: 'Hack';
+            src: url('font/hack-latin/hack-regular-latin-webfont.eot?v=2.020');
+            src: url('font/hack-latin/hack-regular-latin-webfont.eot#iefix&v=2.020') format('embedded-opentype'), url('font/hack-latin/hack-regular-latin-webfont.woff2?v=2.020') format('woff2'), url('font/hack-latin/hack-regular-latin-webfont.woff?v=2.020') format('woff'), url('font/hack-latin/hack-regular-latin-webfont.ttf?v=2.020') format('truetype');
+            font-weight: 400;
+            font-style: normal
+        }
+
+        html, body
+        {
+            margin:0;
+            padding:0;
+            height:100%;
+            /* https://pixabay.com/en/seven-sisters-reefs-ocean-england-1462388/ */
+            background: #5C7FA9 url(img/background.jpg) no-repeat fixed center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+            overflow:hidden;
+        }
+
+        main
+        {
+            position:relative;
+            margin:0 auto;
+            width:100%;
+            height:auto;
+            min-height:100%;
+            text-align:left;
+        }
+
+        article
+        {
+            padding:1em;
+        }
+
+        input
+        {
+            width:8em;
+            font-family: Hack, "Courier New", Courier, monospace;
+            padding:1em;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            border: none;
+            outline:none;
+            background: none;
+        }
+
+        input:hover
+        {
+            background-color:rgba(0,0,0,0.2);
+        }
+
+        input:focus
+        {
+            background-color:rgba(0,0,0,0.5);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color:white;
+            font-family: Hack, "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+            text-align:right;
+            padding:0.5em;
+        }
+
+        footer a, footer a:active, footer a:visited
+        {
+            color:white;
+            text-decoration: underline;
+        }
+
+    </style>
+    <script>
+        if (window.location.protocol != "https:")
+            window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    </script>
+</head>
+<body>
+    <main>
+        <article>
+            <input id="pwd1" title="pwd1" value="" readonly><input id="pwd2" title="pwd2" value="" readonly><br>
+            <input id="pwd3" title="pwd3" value="" readonly><input id="pwd4" title="pwd4" value="" readonly>
+            <script>
+                function generatePassword() {
+                    var length = 10,
+                            charsetNice = "abcdefghkmnopqrstuvwxyzABCDEFGHKLMNPQRSTUVWXYZ23456789",
+                            charset = charsetNice+"+-._",
+                            retVal = "";
+                    retVal += charsetNice.charAt(Math.floor(Math.random() * n));
+                    for (var i = 0, n = charset.length; i < length; ++i) {
+                        retVal += charset.charAt(Math.floor(Math.random() * n));
+                    }
+                    retVal += charsetNice.charAt(Math.floor(Math.random() * n));
+                    return retVal;
+                }
+                document.getElementById("pwd1").value = generatePassword();
+                document.getElementById("pwd2").value = generatePassword();
+                document.getElementById("pwd3").value = generatePassword();
+                document.getElementById("pwd4").value = generatePassword();
+            </script>
+        </article>
+    </main>
+    <footer>
+        Just the world's best password generator. Trust me.<br>
+        Code by <a href="//www.doebeling.me">Andreas</a>. Photo by <a href="//pixabay.com/en/jurassic-coast-england-dorset-1406284/" target="_blank">Roman</a>
+    </footer>
+</body>
+</html>
