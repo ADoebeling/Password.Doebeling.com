@@ -157,17 +157,59 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius:0.5em 0 0 0;
             color:white;
             font-family: Hack, "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-            text-align:right;
-            padding:0.5em;
+            padding:1em;
+        }
+
+        footer:hover h1
+        {
+            font-size: 1.2em;
         }
 
         footer a, footer a:active, footer a:visited
+         {
+             color:white;
+             text-decoration: none;
+            padding:0.3em;
+            border-radius:0.3em;
+            width:30em;
+            display: inline-block;
+         }
+
+        footer a:hover
         {
-            color:white;
-            text-decoration: underline;
+            color:black;
+            background:white;
+        }
+
+        footer h1
+        {
+            font-size:1em;
+            font-weight:normal;
+        }
+
+
+
+        footer:hover > #credits
+        {
+            display: inline-block;
+
+        }
+
+        #credits
+        {
+            display: none;
+            padding-top:1em;
+        }
+
+        #credits li
+        {
+            list-style: disc;
+            margin-left: 2em;
+            padding-bottom:0.5em;
         }
 
         @media screen and (max-width: 700px)
@@ -226,8 +268,27 @@
         </article>
     </main>
     <footer>
-        Just the world's best password generator. Trust me.<br>
-        Code by <a href="//www.doebeling.me">Andreas</a>. Photo by <a href="//pixabay.com/en/jurassic-coast-england-dorset-1406284/" target="_blank">Roman</a>.
+        <h1>Just the world's best password generator. Trust me.</h1>
+        <div id="credits">
+            <ul>
+                <li><a href="//www.doebeling.me" target="_blank">Development by Andreas Döbeling</a></li>
+                <li><a href="//www.doebeling.de" target="_blank">Copyright by DÖBELING Web&IT</a></li>
+                <li><a href="//pixabay.com/en/jurassic-coast-england-dorset-1406284/" target="_blank">Photo by Roman "diego_torres" G.</a>
+                </li>
+                <li><a href="//github.com/chrissimpkins/Hack" target="_blank">Font "Hack" by Chris Simpkins</a></li>
+                <li><a href="https://github.com/ADoebeling/password" target="_blank">Hosted on github</a></li>
+
+                <li><a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fpassword.doebeling.de%2F"
+                       target="_blank">Valid HTML5</a></li>
+                <li><a href="https://jigsaw.w3.org/css-validator/validator?uri=password.doebeling.de&profile=css3&usermedium=all&warning=1&vextwarning="
+                        target="_blank">Valid CSS3</a></li>
+
+
+                <li><a href="https://developers.google.com/speed/pagespeed/insights/?url=password.doebeling.de"
+                        target="_blank">Optimized for  Google PageSpeed Insight</a>
+                <li><a href="https://gtmetrix.com/reports/password.doebeling.de/z6XDELhX" target="_blank">Performance scoring by GTmetrix</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
 </html>
